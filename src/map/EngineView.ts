@@ -525,7 +525,7 @@ export class EngineView extends Container {
         this._config = config;
 
         // set the properties that are set by default when not defined by the user
-        this._config.followCharacter = existy(this._config.followCharacter) ? this._config.followCharacter : true;
+        this._config.followCharacter = existy(this._config.followCharacter) ? this._config.followCharacter : false;
         this._config.changeTransparencies = existy(this._config.changeTransparencies)
             ? this._config.changeTransparencies
             : true;

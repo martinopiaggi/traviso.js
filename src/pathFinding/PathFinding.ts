@@ -107,19 +107,6 @@ export class PathFinding {
         }
     }
 
-    // /**
-    //  * Cleans only dirty nodes.
-    //  *
-    //  * @method cleanDirty
-    //  * @private
-    //  */
-    // private cleanDirty(): void {
-    //     for (let i = 0; i < this.dirtyNodes.length; i++) {
-    //         this.cleanNode(this.dirtyNodes[i]);
-    //     }
-    //     this.dirtyNodes = [];
-    // }
-
     /**
      * Marks a node as dirty.
      *

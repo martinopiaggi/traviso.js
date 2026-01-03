@@ -108,19 +108,6 @@ export class TileView extends Container {
             this._tileGraphics.gotoAndStop(parseInt(this.type));
         }
 
-        // const colorsArray = [0x0106ff, 0x3b6d14, 0x8789ff, 0xb32bf9, 0xeb36d0, 0xfe0000, 0xeb3647, 0xf27e31, 0xffea01, 0x00ff18, 0x3b6d14, 0xfa9bbb, 0xf9c7bc, 0x8d6729, 0x633e07];
-        // const c = colorsArray[ this.type < 2 ? this.type : 0 ];
-
-        // this._tileGraphics = new PIXI.Graphics();
-        // this._tileGraphics.clear();
-        // this._tileGraphics.beginFill(c);
-        // this._tileGraphics.moveTo(this.vertices[0][0], this.vertices[0][1]);
-        // for (let i=1; i < this.vertices.length; i++)
-        // {
-        // this._tileGraphics.lineTo(this.vertices[i][0], this.vertices[i][1]);
-        // };
-        // this._tileGraphics.endFill();
-
         if (this._engine.mapData.tileHighlightImage) {
             this._highlightedOverlay = new Sprite(Texture.from(this._engine.mapData.tileHighlightImage.path));
             this._highlightedOverlay.anchor.x = 0.5;

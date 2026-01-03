@@ -36,12 +36,23 @@
     
     // engine-instance configuration object
     var instanceConfig = {
-        mapDataPath: "mapData.json", // the path to the json file that defines map data, required
-        assetsToLoad: ["../assets/assets_map.json", "../assets/assets_characters.json"] // array of paths to the assets that are desired to be loaded by traviso, no need to use if assets are already loaded to PIXI cache, default null
+        mapDataPath: "mapData.json",
+        assetsToLoad: ["../assets/assets_map.json", "../assets/assets_characters.json"],
+
+        // Camera behavior (followCharacter defaults to false - free camera mode)
+        // Set to true if you want the camera to follow the player
+        // followCharacter: true,
+
+        engineInstanceReadyCallback: onEngineReady
     };
 
     var engine = TRAVISO.getEngineInstance(instanceConfig);
-    pixiRoot.stage.addChild(engine);
+
+    function onEngineReady() {
+        pixiRoot.stage.addChild(engine);
+        console.log('Traviso engine ready! Click tiles to move the character.');
+        console.log('Drag the map to pan. Camera does not follow character by default.');
+    }
 
         </script>
     </body>

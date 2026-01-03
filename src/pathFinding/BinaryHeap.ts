@@ -28,24 +28,6 @@ export class BinaryHeap {
         return result;
     }
 
-    // private remove(node: unknown) {
-    //     const i = this.content.indexOf(node);
-
-    //     // When it is found, the process seen in 'pop' is repeated
-    //     // to fill up the hole.
-    //     const end = this.content.pop();
-
-    //     if (i !== this.content.length - 1) {
-    //         this.content[i] = end;
-
-    //         if (this.scoreFunction(end) < this.scoreFunction(node)) {
-    //             this.sinkDown(i);
-    //         }
-    //         else {
-    //             this.bubbleUp(i);
-    //         }
-    //     }
-    // }
     public size(): number {
         return this.content.length;
     }
