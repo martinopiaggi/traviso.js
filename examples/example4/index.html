@@ -8,6 +8,10 @@
                 margin: 0;
                 padding: 0;
                 background-color: #000000;
+                overflow: hidden;
+            }
+            canvas {
+                display: block;
             }
         </style>
         
@@ -19,9 +23,10 @@
 
     ////// Here, we initialize the pixi application
     var pixiRoot = new PIXI.Application({
-        width: 800,
-        height: 600,
+        width: window.innerWidth,
+        height: window.innerHeight,
         backgroundColor: 0x6BACDE,
+        resizeTo: window,
     });
 
     // add the renderer view element to the DOM

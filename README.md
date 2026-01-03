@@ -43,21 +43,39 @@ You can find the documentation [here](http://www.travisojs.com/docs/)
 
 Do you want to contribute? That's awesome. You can either message me through Twitter ([@axaq](https://twitter.com/axaq)) or use the Traviso.js [blog](http://www.travisojs.com/blog/).
 
-### How to build
+### Development
 
 After cloning the repo, install the build dependencies using npm:
 
 ```bash
-$> npm install
+npm install
 ```
 
-Then build:
+**Build the project:**
 
 ```bash
-$> npm run build
+npm run build
 ```
 
 This will create browser, CommonJS, and ES module versions of the library under `dist` folder. A minified version for browsers can be found at the same place.
+
+**Development workflow:**
+
+```bash
+# Build once
+npm run build
+
+# Watch mode - automatically rebuild on file changes
+npm run watch
+
+# Serve examples locally
+npm run serve
+
+# Watch + Serve in parallel
+npm run dev
+```
+
+When you make changes to TypeScript files, run `npm run build` (or use `npm run watch` for automatic rebuilding). For HTML file changes in examples, just refresh your browser.
 
 ### Usage
 

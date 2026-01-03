@@ -26,15 +26,17 @@ export { ObjectView } from './map/ObjectView';
 export { skipHello } from './utils/hello';
 export * from './utils/trace';
 export { existy, mathMap, dotProduct, getUnit, getDist, isInPolygon } from './utils/calculations';
-export {
+export type {
     TDirection,
     TDirections,
-    DIRECTIONS,
-    PF_ALGORITHMS,
     TPathFindingAlgorithms,
     TPathFindingAlgorithmID,
 } from './utils/constants';
-export { TColumnRowPair, TPositionPair } from './utils/map';
+export {
+    DIRECTIONS,
+    PF_ALGORITHMS,
+} from './utils/constants';
+export type { TColumnRowPair, TPositionPair } from './utils/map';
 
 /**
  * Global configuration settings for traviso

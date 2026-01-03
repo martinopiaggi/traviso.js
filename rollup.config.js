@@ -3,8 +3,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import pkg from './package.json';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
-// import typescript from '@rollup/plugin-typescript';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
+// import typescript from 'rollup-plugin-typescript2';
 // import { uglify } from 'rollup-plugin-uglify';
 import { terser } from 'rollup-plugin-terser';
 import jscc from 'rollup-plugin-jscc';
@@ -35,30 +35,11 @@ const plugins = [
         extensions,
         preferBuiltins: false,
     }),
-    // typescript({
-    //     tsconfig: 'tsconfig.build.json'
-    // }),
-    // commonjs(),
-    typescript({
-        useTsconfigDeclarationDir: true,
-        tsconfigOverride: {
-            compilerOptions: {
-                // exclude: ['**/*.stories.*'],
-                noEmit: true,
-                declaration: true,
-                emitDeclarationOnly: false,
-            },
-            include: ['src'],
-        },
-    }),
-    // typescript({
-    //     tsconfig: './tsconfig.json',
-    //     declaration: false,
-    //     noEmit: true,
-    // }),
     commonjs({
-        exclude: 'node_modules',
-        ignoreGlobal: true,
+        include: 'node_modules/**',
+    }),
+    typescript({
+        tsconfig: './tsconfig.build.json',
     }),
     babel({
         exclude: 'node_modules/**',
@@ -67,17 +48,10 @@ const plugins = [
         babelHelpers: 'bundled',
         presets: [
             '@babel/preset-env',
-            // '@babel/preset-typescript'
+            '@babel/preset-typescript',
         ],
         minified: false,
     }),
-    // uglify({
-    //     sourcemap: {
-    //         filename: "out.js",
-    //         url: "out.js.map"
-    //     }
-    // }),
-    // terser(),
 ];
 
 const compiledDate = new Date().toUTCString().replace(/GMT/g, 'UTC');

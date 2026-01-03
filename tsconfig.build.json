@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": false,
+        "declarationDir": null,
+        "declarationMap": false,
+        "noEmit": false
+    },
+    "exclude": ["dist", "types", "docs", "**/node_modules", "**/rollup.config.js", "benchmark"]
+}
